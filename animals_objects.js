@@ -2,49 +2,13 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-const allAnimals = [
-    {
-        name: "Mandu",
-        desc: "amazing",
-        type: "cat",
-        age: 10
-    },
-    {
-        name: "Mia",
-        desc: "black",
-        type: "cat",
-        age: 10
-    },
-    {
-        name: "Leeloo",
-        desc: "growing",
-        type: "dog",
-        age: 3
-    },
-    {
-        name: "Toothless",
-        desc: "trained",
-        type: "dragon",
-        age: 14
-    },
-    {
-        name: "ScoobyDoo",
-        desc: "wondering",
-        type: "dog",
-        age: 58
-    },
-    {
-        name: "Horsey",
-        desc: "horsing",
-        type: "horse",
-        age: 10
-    }
-];
+const allAnimals = [];
 
 const Animal = {
-    animalName: "",
-    desc: "",
-    type: "",
+    name: "lålå",
+    desc: "lala",
+    type: "hihi",
+    age: 0
 };
 
 function start( ) {
@@ -66,12 +30,28 @@ function loadJSON() {
 function prepareObjects( jsonData ) {
     jsonData.forEach( jsonObject => {
         // TODO: Create new object with cleaned data - and store that in the allAnimals array
-        
+        const animal = Object.create(Animal);
+       
+        const fullname = jsonObject.fullname;
+
+        const firstSpace = fullname.indexOf(" ");
+        const secondSpace = fullname.indexOf(" ", firstSpace + 1);
+        const lastSpace = fullname.lastIndexOf(" ");
+
+        const name = fullname.substring(0, firstSpace);
+        const desc = fullname.substring(secondSpace + 1, lastSpace);
+        const type = fullname.substring(lastSpace +1);
+
+        console.log(`
+        Name: ${name}
+        Desc: ${desc}
+        Type: ${type}`);
+
         // TODO: MISSING CODE HERE !!!
-      //  const animal = Object.create(Animal);
+      //  
         //animal.animalName = getAnimalName(jsonObject.fullname);
         //animal.desc = jsonObject.desc;
-        //allAnimals.push(animal);
+        allAnimals.push(animal);
         
     });
 
