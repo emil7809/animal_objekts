@@ -29,9 +29,10 @@ function loadJSON() {
 
 function prepareObjects( jsonData ) {
     jsonData.forEach( jsonObject => {
-        // TODO: Create new object with cleaned data - and store that in the allAnimals array
+        // Create new object
         const animal = Object.create(Animal);
        
+        //exstrack data from json objekt
         const fullname = jsonObject.fullname;
 
         const firstSpace = fullname.indexOf(" ");
@@ -42,17 +43,20 @@ function prepareObjects( jsonData ) {
         const desc = fullname.substring(secondSpace + 1, lastSpace);
         const type = fullname.substring(lastSpace +1);
 
-        console.log(`
-        Name: ${name}
-        Desc: ${desc}
-        Type: ${type}`);
+        // console.log(`
+        // Name: ${name}
+        // Desc: ${desc}
+        // Type: ${type}`);
 
-        // TODO: MISSING CODE HERE !!!
-      //  
-        //animal.animalName = getAnimalName(jsonObject.fullname);
-        //animal.desc = jsonObject.desc;
+        //add clean data into newly created objekt
+        animal.name = name;
+        animal.desc = desc;
+        animal.type = type;
+        animal.age = jsonObject.age;
+
+        //add the objekt to the global array
         allAnimals.push(animal);
-        
+  
     });
 
     displayList();
