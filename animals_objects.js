@@ -2,7 +2,45 @@
 
 window.addEventListener("DOMContentLoaded", start);
 
-const allAnimals = [];
+const allAnimals = [
+    {
+        name: "Mandu",
+        desc: "amazing",
+        type: "cat",
+        age: 10
+    },
+    {
+        name: "Mia",
+        desc: "black",
+        type: "cat",
+        age: 10
+    },
+    {
+        name: "Leeloo",
+        desc: "growing",
+        type: "dog",
+        age: 3
+    },
+    {
+        name: "Toothless",
+        desc: "trained",
+        type: "dragon",
+        age: 14
+    },
+    {
+        name: "ScoobyDoo",
+        desc: "wondering",
+        type: "dog",
+        age: 58
+    },
+    {
+        name: "Horsey",
+        desc: "horsing",
+        type: "horse",
+        age: 10
+    }
+];
+
 const Animal = {
     animalName: "",
     desc: "",
@@ -30,10 +68,10 @@ function prepareObjects( jsonData ) {
         // TODO: Create new object with cleaned data - and store that in the allAnimals array
         
         // TODO: MISSING CODE HERE !!!
-        const animal = Object.create(Animal);
-        animal.animalName = getAnimalName(jsonObject.fullname);
-        animal.desc = jsonObject.desc;
-        allAnimals.push(animal);
+      //  const animal = Object.create(Animal);
+        //animal.animalName = getAnimalName(jsonObject.fullname);
+        //animal.desc = jsonObject.desc;
+        //allAnimals.push(animal);
         
     });
 
